@@ -1,0 +1,197 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+/*此处为引用现成的样式*/
+.tui-checkbox:checked {
+    background:#1673ff
+}
+.tui-checkbox {
+    width:25px;
+    height:25px;
+    background-color:#ffffff;
+    border:solid 1px #dddddd;
+    -webkit-border-radius:50%;
+    border-radius:50%;
+    font-size:1.5rem;
+    margin:0;
+    padding:0;
+    position:relative;
+    display:inline-block;
+    vertical-align:top;
+    cursor:default;
+    -webkit-appearance:none;
+    -webkit-user-select:none;
+    user-select:none;
+    -webkit-transition:background-color ease 0.1s;
+    transition:background-color ease 0.1s;
+    top: 13px;
+}
+.tui-checkbox:checked::after {
+    content:'';
+    top:5px;
+    left:5px;
+    position:absolute;
+    background:transparent;
+    border:#fff solid 2px;
+    border-top:none;
+    border-right:none;
+    height:6px;
+    width:10px;
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    margin-right: 10px;
+}
+
+/*左导航栏*/
+#asideNav-fixed{
+    width: 50px;
+    height: 620px;
+    text-align: center;
+}
+#asideNav-fold{
+    width: 0px;
+    height: 620px;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    overflow: hidden;
+    background-color: #efefef;
+    transition: 0.3s;
+    z-index: 5;
+}
+.activeTag{
+    border: #4090ff 1px solid;
+    border-radius: 3px;
+}
+.fold-item{
+    margin-top: 15px;
+    height: 35.2px;
+    font-size: 24pt;
+    padding-left: 10px;
+    border: 1px solid #efefef;
+}
+.fold-item div{
+    font-size: 20pt;
+    position: relative;
+    top: -3px;
+}
+#searchInput{
+    position: relative;
+    top: -5px;
+    border: #efefef 1px solid;
+    border-radius: 2px;
+    width: 110px;
+    font-size: 14pt;
+    margin-left: 10px;
+}
+
+/*右导航栏*/
+#rightNav-fold{
+    position: absolute;
+    width: 0;
+    height: 600px;
+    right: 0;
+    background-color: #efefef;
+    transition: 0.5s;
+    overflow: hidden;
+}
+#titleInput{
+    background-color: white;
+    border: #4090ff solid 0;
+    font-size: 14pt;
+    width: 175px;
+    position: relative;
+}
+#titleEditBtn{
+    /*color: white;*/
+    /*background-color: #4090ff;*/
+    /*padding: 5px 6px;*/
+    /*border: #4090ff 1px solid;*/
+    /*border-radius: 3px;*/
+    font-size: 16pt;
+    position: relative;
+    margin-left: 15px;
+}
+#saveDetailBtn{
+    background-color: #4090ff;
+    padding: 5px 8px;
+    border: #4090ff 1px solid;
+    border-radius: 3px;
+    color: white;;
+}
+
+/*主体部分*/
+.todoLine{
+    padding: 7px 0;
+    border-bottom: #efefef 2px solid;
+    font-size: 16pt;
+    height: 42px;
+}
+.paginationBtn{
+    padding: 4px 8px;
+    background: white;
+    border: #4090ff 1px solid;
+    border-radius: 2px;
+    color: #4090ff;
+    font-size: 12pt;
+}
+#addBtn{
+    padding: 2.5px 5px;
+    position: relative;
+    top: 1.5px;
+    border: #4090ff 1px solid;
+    color: #4090ff;
+    background-color: white;
+    margin-left: 5px;
+}
+#addInput {
+    display: inline;
+    font-size: 18pt;
+    width: 220px;
+    border: #4090ff 1px solid;
+    border-radius: 3px;
+}
+#dateEditToggle{
+    margin-left: 115px;
+    font-size: 14pt;
+}
+#completeAllToggle{
+    background-color: white;
+    border: #4090ff 1px solid;
+    border-radius: 3px;
+    color: #4090ff;
+    padding: 3px 5px
+}
+#deleteAllCompleted{
+    background-color: white;
+    border: #3effb8 1px solid;
+    border-radius: 3px;
+    color: #3effb8;
+    padding: 3px 5px
+}
+.completed{
+    color: #d9d9d9;
+    text-decoration: line-through;
+}
+.todo-msg{
+    float: left;
+    width: 65%;
+    position: relative;
+    top: 10px;
+    margin-left: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+

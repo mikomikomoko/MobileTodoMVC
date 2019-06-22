@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width" name="viewport"/>
+    <title>Title</title>
+    <link type="text/css" href="//at.alicdn.com/t/font_1253394_2fchp23mm92.css" rel="stylesheet">
+    <link type="text/css" href="../css/TodoMVC.css" rel="stylesheet">
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <!--hader-->
+    <div id="head" style="background-color: #4090ff">
+        <div style="color: white; text-align: center; font-size: 24pt">
+            <strong>TodoMVC</strong>
+        </div>
+    </div>
+
+    <!--main -->
+    <div>
+        <div id="asideNav" style="background-color: #efefef; width: 50px; position: relative; float: left">
+            <div id="asideNav-fixed">
+                <div style="padding: 20px 0"><span id="asideNavToggle" class="iconfont" style="font-size: 24pt"> &#xe7f4; </span></div>
+                <div style="margin-top: 5px;"><span id="important" class="iconfont tagBtn" style="font-size: 24pt"> &#xe7df; </span></div>
+                <div style="margin-top: 15px"><span id="overdue" class="iconfont tagBtn" style="font-size: 24pt"> &#xe77e; </span></div>
+                <div style="margin-top: 15px"><span id="unFinished" class="iconfont tagBtn" style="font-size: 24pt"> &#xe780; </span></div>
+                <div style="margin-top: 15px"><span id="finished" class="iconfont tagBtn" style="font-size: 24pt"> &#xe783; </span></div>
+                <div style="margin-top: 15px"><span id="all" class="iconfont tagBtn" style="font-size: 24pt"> &#xe793; </span></div>
+            </div>
+            <div id="asideNav-fold">
+                <div style="padding: 20px 0">
+                    <input id="searchInput">
+                    <span id="searchBtn" class="iconfont" style="font-size: 24pt; margin-left: 5px"> &#xe60a; </span>
+                </div>
+                <div class="fold-item" style="margin-top: 5px">
+                    <div style="width: 50%; float: left">重要</div>
+                    <div id="importantCnt" style="width: 40%; float: left; font-size: 20pt; top:-1px; text-align: right; padding-right: 15px">24</div>
+                </div>
+                <div class="fold-item">
+                    <div style="width: 50%; float: left">过期</div>
+                    <div id="overdueCnt" style="width: 40%; float: left; font-size: 20pt; top:-1px; text-align: right; padding-right: 15px">24</div>
+                </div>
+                <div class="fold-item">
+                    <div style="width: 50%; float: left">未完成</div>
+                    <div id="unFinishedCnt" style="width: 40%; float: left; font-size: 20pt; top:-1px; text-align: right; padding-right: 15px">24</div>
+                </div>
+                <div class="fold-item">
+                    <div style="width: 50%; float: left">已完成</div>
+                    <div id="finishedCnt" style="width: 40%; float: left; font-size: 20pt; top:-1px; text-align: right; padding-right: 15px">24</div>
+                </div>
+                <div class="fold-item">
+                    <div style="width: 50%; float: left">所有</div>
+                    <div id="allCnt" style="width: 40%; float: left; font-size: 20pt; top:-1px; text-align: right; padding-right: 15px">24</div>
+                </div>
+            </div>
+        </div>
+        <div id="main" style="float: left; width: 310px; height: 600px; overflow-y:scroll; overflow-x:hidden">
+            <div style="padding: 10px 20px; padding-bottom: 5px; text-align: center">
+                <strong  id="routerName" style="font-size: 20pt; text-align: center">hello</strong>
+            </div>
+            <div style="padding: 0 20px; text-align: center">
+                <button id="completeAllToggle" style="">完成所有</button>
+                <button id="deleteAllCompleted" style="">清空完成</button>
+            </div>
+            <div style="padding: 5px 20px; padding-right: 0">
+                <input id="addInput">
+                <button id="addBtn">
+                    <span class="iconfont" style="font-size: 20pt">&#xe8fe;</span>
+                </button>
+            </div>
+            <div style="padding: 0 20px">
+                <div id="todoListContainer">
+                    <div class="todoLine">
+
+                    </div>
+                    <div class="todoLine">
+
+                    </div>
+                    <div class="todoLine">
+
+                    </div>
+                    <div class="todoLine">
+
+                    </div>
+                    <div class="todoLine">
+
+                    </div>
+                    <div class="todoLine">
+
+                    </div>
+                    <div class="todoLine">
+
+                    </div>
+                    <div class="todoLine">
+
+                    </div>
+                </div>
+            </div>
+            <div id="pagination" style="margin-top: 25px; padding: 0px 20px; padding-right: 0">
+                <button id="prevPageBtn" class="paginationBtn">上一页</button>
+                <button id="nextPageBtn" class="paginationBtn" style="margin-left: 5px">下一页</button>
+                <input id="gotoPageInput" type="text" style="display: inline; width: 30px; height: 28px; font-size: 14pt; text-align: center; margin-left: 30px">
+                <button id="gotoPageBtn" style="position: relative; top: 0px; left: 5px" class="paginationBtn">跳转</button>
+            </div>
+        </div>
+        <div id="rightNav" style="float: right; width: 0; position: relative; height: 600px">
+            <div id="rightNav-fold">
+                <div style="background-color: white">
+                    <span class="iconfont" style="font-size: 24pt" id="rightNavToggle"> &#xe7f4; </span>
+                    <strong style="font-size: 20pt; position: relative; left: 125px; top: -2px">收起</strong>
+                </div>
+
+                <div style="background-color: white; margin-top: 30px; overflow: hidden">
+                    <input id="titleInput" type="text">
+<!--                    <button id="titleEditBtn">修改</button>-->
+                    <span class="iconfont" id="titleEditBtn">&#xe6ea;</span>
+                </div>
+
+                <div style="margin-top: 10px; background-color: white; font-size: 14pt">
+                    <strong>截止日期</strong>
+                    <span id="dateEditToggle" class="iconfont">&#xe6a3;</span>
+                </div>
+                <div id="dateInputContainer" style="height: 0px; overflow: hidden; transition: 0.5s; background-color: white">
+                    <input id="dateInput" type="datetime-local" style="width: 170px; height: 30px; font-size: 12pt; padding: 0; border: 0; margin-top: 0">
+                    <button id="saveDateBtn" style="background-color: #4090ff; border: #4090ff 1px solid; border-radius: 3px; padding: 3px 5px; color: white; margin-left: 20px;">存</button>
+                </div>
+                <div id="ddl" style="background-color: white; font-size: 12pt; padding-top: 8px">
+
+                </div>
+
+                <div style="margin-top: 30px">
+                    <strong style="font-size: 16pt">详情</strong>
+                </div>
+                <div id="detailContainer" style="margin-top: 5px; background-color: white; width: 100%; height: 140px; overflow-y: scroll">
+
+                </div>
+
+                <div style="margin-top: 10px">
+                    <strong style="font-size: 16pt">编辑</strong>
+                    <span id="editDetailToggle" class="iconfont" style="font-size: 18pt; position: relative; top: 2px; margin-left: 145px">&#xe6ea;</span>
+                </div>
+                <div id="detailEditor" style="overflow: hidden; transition: 0.3s">
+                    <textarea placeholder="支持markdown语法" id="detailInput" rows="8" style="margin-top: 5px; width: 100%; padding: 0; overflow-y: scroll; font-size: 12pt" ></textarea>
+                    <div style="text-align: right; margin-top: 2px">
+                        <button id="saveDetailBtn">保存</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/mDate.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="../js/TodoMVC.js"></script>
+
+<!--    <script>-->
+<!--        var storage = window.localStorage;-->
+<!--        storage.removeItem('uid');-->
+<!--        storage.removeItem('todoList');-->
+<!--    </script>-->
+</body>
+</html>
